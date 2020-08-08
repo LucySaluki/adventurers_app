@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventurers Travel App</title>
+</head>
+<body>
+    <header>
+        <h1>Adventurers Travel App</h1>
+            <nav>
+                <ul class = "nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li>Countries
+                        <ul>
+                            <li><a href="/countries">All countries</a></li>
+                            <li><a href="/countries/new.html">Add country</a></li>
+                        </ul>
+                    </li>
+                    <li>Places
+                        <ul>
+                            <li><a href="/places">All places</a></li>
+                            <li><a href="/places/new.html">Add place</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
