@@ -31,7 +31,7 @@ def select_all():
 
 # select individual
 def select(id):
-    plsce = None
+    place = None
     sql = "SELECT * FROM places where id = %s"
     values = [id]
     result = run_sql(sql,values)[0]
@@ -42,5 +42,9 @@ def select(id):
     return place
 
 # delete individual
+def delete(id):
+    sql = "DELETE FROM places WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 
 # update individual
