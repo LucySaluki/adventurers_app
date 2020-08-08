@@ -13,6 +13,9 @@ def save(place):
     return place
 
 # delete all
+def delete_all():
+    sql = "DELETE FROM countries"
+    run_sql(sql)
 
 # select all
 
