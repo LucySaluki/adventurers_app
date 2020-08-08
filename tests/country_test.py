@@ -9,11 +9,7 @@ class TestCountry(unittest.TestCase):
         self.country = Country("Borneo")
         self.place =  Place("Kota Kinabalu", "Highest Peak in Malaysia", "Natural",self.country,True)
 
-
     def test_country_has_name(self):
         self.assertEqual("Borneo",self.country.name)
 
-    def test_can_add_country(self):
-        country= Country("Madagascar")
-        save(country)
-        self.assertEqual("Madagascar",self.country.name)
+        

@@ -18,8 +18,28 @@ def delete_all():
     run_sql(sql)
 
 # select all
+def select_all():
+    places = []
+    sql = "SELECT * FROM places"
+    results = run_sql(sql)
+
+    for row in results:
+        country = country_repository.select(row["id"])
+        place=Place(row['place_name'],row['description'],row['place_type'],country,row['visited'],row['id'])
+        places.append(place)
+    return places
 
 # select individual
+def select(id):
+    plsce = None
+    sql = "SELECT * FROM places where id = %s"
+    values = [id]
+    result = run_sql(sql,values)[0]
+
+    if result is not None:
+        country = country_repository.select(result['country_id'])
+        place = Place(result['place_name'],result['description'],result['place_type'],country,result['visited'],result['id'])
+    return place
 
 # delete individual
 

@@ -24,7 +24,14 @@ place_2 = Place("Sepilok","Rehabilitation centre and sactuary for Orangutans","N
 place_repository.save(place_2)
 place_3=Place('Machu Picchu', "Ancient Inca City and mountain","Archaeological Site",country_2, True )
 place_repository.save(place_3)
-place_4 = Place("Puerto Maldanado", "Lake and reserve in the hear of the peruvian Amazon", "Nature Reserve", country_2,True)
+place_4 = Place("Puerto Maldanado", "Lake and reserve in the heart of the peruvian Amazon jungle", "Nature Reserve", country_2,True)
 place_repository.save(place_4)
+
+test_country_4 = country_repository.select(country_4.id)
+print(test_country_4.name)
+
+test_place_3 = place_repository.select(place_4.id)
+print(test_place_3.description)
+
 
 pdb.set_trace()

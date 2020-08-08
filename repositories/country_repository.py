@@ -17,8 +17,22 @@ def delete_all():
     run_sql(sql)
 
 # select all
+def select_all():
+    countries = []
+    sql = "SELECT * FROM countries"
+    results = run_sql(sql)
+    for result in results:
+        country = Country(result["name"], result["id"])
+        countries.append(country)
+    return countries
 
 # select individual
+def select(id):
+    sql = "SELECT * FROM countries WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    country = Country(result["name"], result["id"])
+    return country
 
 # delete individual
 
