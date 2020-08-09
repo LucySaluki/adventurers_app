@@ -3,26 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adventurers Travel App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>Adventurers Travel List</title>
 </head>
 <body>
     <header>
-        <h1>Adventurers Travel App</h1>
+        <h1>Adventurers Travel List</h1>
             <nav>
                 <ul class = "nav-menu">
                     <li><a href="/">Home</a></li>
-                    <li>Countries
-                        <ul>
-                            <li><a href="/countries">All countries</a></li>
-                            <li><a href="/countries/new.html">Add country</a></li>
-                        </ul>
-                    </li>
-                    <li>Places
-                        <ul>
-                            <li><a href="/places">All places</a></li>
-                            <li><a href="/places/new.html">Add place</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/countries">Countries</a></li>
+                    <li><a href="/places">Places</a></li>
                 </ul>
             </nav>
     </header>

@@ -1,0 +1,54 @@
+body {
+  color:whitesmoke;
+  font-family: Fantasy, Tahoma, sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+body::after {
+  content: "";
+  background: url('/static/images/snake_island.jpg');
+  opacity: 0.60;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position:absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+ h1 {
+   padding:10px;
+   font-size:40px;
+   color:rgb(0, 102, 102);
+ }
+
+.nav-menu{
+  display: flex;
+  padding: 10px;
+  background-color: rgb(57, 162, 189);
+  color: white;
+}
+
+.nav-menu li a{
+  text-decoration: none;
+}
+
+.nav-menu li a:visited{
+  color: white;
+}
+
+.nav-menu li{
+  padding-right: 10px;
+  list-style: none;
+  color: white;
+  font-size: 20px;
+}
+
+.container {
+  padding-left:10px;
+  color:rgb(0, 102, 102);
+  font-weight: bold;
+}
+
