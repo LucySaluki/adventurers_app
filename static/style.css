@@ -22,6 +22,7 @@ body::after {
    padding:10px;
    font-size:40px;
    color:rgb(0, 102, 102);
+   margin-block-end: 0em;
  }
 
 .nav-menu{
@@ -52,3 +53,17 @@ body::after {
   font-weight: bold;
 }
 
+.place {
+  display:flex;
+  justify-items: center;
+  background-color: white;
+  border-radius: 5px;
+  border-style: groove;
+  border-color:darkcyan;
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+  margin: 20px 10px;
+  width:35%;
+  min-width: 200px;
+  max-width:500px;
+}

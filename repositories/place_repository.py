@@ -24,7 +24,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        country = country_repository.select(row["id"])
+        country = country_repository.select(row["country_id"])
         place=Place(row['place_name'],row['description'],row['place_type'],country,row['visited'],row['id'])
         places.append(place)
     return places
