@@ -19,7 +19,7 @@ def delete_all():
 # select all
 def select_all():
     countries = []
-    sql = "SELECT * FROM countries"
+    sql = "SELECT * FROM countries order by countries.name"
     results = run_sql(sql)
     for result in results:
         country = Country(result["name"], result["id"])
