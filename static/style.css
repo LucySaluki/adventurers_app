@@ -63,8 +63,8 @@ body::after {
   font-family: 'Montserrat', sans-serif;
   margin: 20px 20px;
   width:35%;
-  min-width: 200px;
-  max-width:500px;
+  min-width: 400px;
+  max-width:600px;
 }
 
 .country {
@@ -103,7 +103,7 @@ body::after {
 }
 
 .back-button {
-  padding:10px;
+  padding:2px;
   margin-left:20px;
   border-style: outset;
   font-family: 'Montserrat', sans-serif;
@@ -128,10 +128,6 @@ input[type=submit]  {
   border-radius: 5px;
 }
 
-.no-bullet {
-  list-style: none;
-}
-
-.no-bullet li {
-  padding:3px;
+p{
+  margin-block-end: 5px;
 }

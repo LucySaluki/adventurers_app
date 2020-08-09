@@ -2,7 +2,6 @@ from db.run_sql import run_sql
 
 from models.countries import Country
 
-
 # save
 def save(country):
     sql = "INSERT INTO countries(name,continent) VALUES(%s,%s) RETURNING ID"

@@ -17,20 +17,21 @@ def places():
 # NEW
 @places_blueprint.route("/places/new")
 def new_place():
+    countries =country_repository.select_all()
     place_types =place_type_repository.select_all()
-    return render_template("places/new.html", place_types = place_types)
+    return render_template("places/new.html", countries=countries, place_types = place_types)
 
 
 # CREATE
 @places_blueprint.route("/places", methods=["POST"])
 def create_place():
-    place_name = request.form["place_name"]
+    place_name = request.form['place_name']
     description=request.form['description']
-    place_type_id = request.form["place_type_id"]
+    place_type_id = request.form['place_type_id']
     place_type = place_type_repository.select(place_type_id)
-    country_id = request.form["country_id"]
+    country_id = request.form['country_id']
     country = country_repository.select(country_id)
-    visited = request.form["visited"]
+    visited = request.form['visited']
     new_place = Place(place_name,description, place_type, country, visited)
     place_repository.save(new_place)
     return redirect("/places")
@@ -62,7 +63,7 @@ def update_place(id):
     return redirect("/places")
 
 # DELETE
-@places_blueprint.route("/[places/<id>/delete")
+@places_blueprint.route("/places/<id>/delete")
 def delete_place(id):
     place_repository.delete(id)
     return redirect("/places")
