@@ -97,7 +97,7 @@ body::after {
 }
 
 .back-button a {
-  color: rgb(57, 162, 189);
+  color: whitesmoke;
   font-weight: bold;
   text-decoration: none;
 
@@ -109,6 +109,7 @@ body::after {
   border-style: outset;
   font-family: 'Montserrat', sans-serif;
   border-radius: 5px;
+  background-color: rgb(57, 162, 189);
 }
 
 #add-new{
@@ -126,4 +127,12 @@ input[type=submit]  {
   border-style: outset;
   font-family: 'Montserrat', sans-serif;
   border-radius: 5px;
+}
+
+.no-bullet {
+  list-style: none;
+}
+
+.no-bullet li {
+  padding:3px;
 }

@@ -1,16 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for country in countries %}
+
   <div class="place">
-    <div>
-      Country: {{ country.name }}
-    <div>
-      <P><a href="/countries/{{ country.id }} ">More info</a></P>
-    </div>
-    </div>
+      <ul class="no-bullet">
+        <li>Country: {{ country.name }} </li>
+        <li>Continent : {{ country.continent}}</li>
+      </ul>
   </div>
-{% endfor %}
+
 
 <button class = "back-button"><a href="/countries">Return to countries</a></button>
 
