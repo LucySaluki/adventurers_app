@@ -44,7 +44,6 @@ def edit_place(id):
     place = place_repository.select(id)
     return render_template('places/edit.html', place=place)
 
-
 # UPDATE
 @places_blueprint.route("/places/<id>", methods=["POST"])
 def update_place(id):
@@ -57,7 +56,6 @@ def update_place(id):
     new_place = Place(place_name,description, place_type, country, visited)
     place_repository.update(new_place)
     return redirect("/places")
-
 
 # DELETE
 @places_blueprint.route("/[places/<id>/delete")

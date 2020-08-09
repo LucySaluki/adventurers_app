@@ -1,8 +1,10 @@
 from db.run_sql import run_sql
 from models.places import Place
 from models.countries import Country
+from models.place_types import PlaceType
 
 import repositories.country_repository as country_repository
+import repositories.place_type_repository as place_type_repository
 
 # save
 def save(place):

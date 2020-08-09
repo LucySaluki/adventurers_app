@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS places;
+DROP TABLE IF EXISTS place_types
 DROP TABLE IF EXISTS countries;
 
 CREATE TABLE countries (
@@ -7,11 +8,16 @@ CREATE TABLE countries (
     continent VARCHAR(255)
 );
 
+CREATE TABLE place_types (
+    id SERIAL PRIMARY KEY,
+    type_name VARCHAR(255)
+)
+
 CREATE TABLE places (
     id SERIAL PRIMARY KEY,
     place_name VARCHAR (255),
     description VARCHAR(255),
-    place_type VARCHAR(255),
+    place_type INT REFERENCES place_types(id),
     visited BOOLEAN,
     country_id INT REFERENCES countries(id)
 )
