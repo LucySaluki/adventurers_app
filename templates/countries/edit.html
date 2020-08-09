@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Edit a Country</h2>
+
+<form action="/countries/{{ country.id }}" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="add-new" name="name" value ="{{country.name}}">
+    </div>
+    <div>
+      <label for="continent">Continent:</label>
+        <select id="add-new" name="continent" value ="{{country.continent}}">
+          <option value="Africa" {% if country.continent == "Africa" %} selected="selected" {% endif %}>Africa</option>
+          <option value="Antarctica" {% if country.continent == "Antarctica" %} selected="selected" {% endif %}>Antarctica</option>
+          <option value="Asia" {% if country.continent == "Asia" %} selected="selected" {% endif %}>Asia</option>
+          <option value="Europe" {% if country.continent == "Europe" %} selected="selected" {% endif %}>Europe</option>
+          <option value="North America" {% if country.continent == "North America" %} selected="selected" {% endif %}>North America</option>
+          <option value="Oceania" {% if country.continent == "Oceania" %} selected="selected" {% endif %}>Oceania</option>
+          <option value="South America" {% if country.continent == "South America" %} selected="selected" {% endif %}>South America</option>
+        </select>
+    </div>
+    <div>
+      <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

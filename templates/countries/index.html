@@ -2,11 +2,13 @@
 {% block content %}
 
 {% for country in countries %}
-  <div class="place">
+  <div class="country">
     <div>
-      Country: {{ country.name }}
+      <p>Country: {{ country.name }}</p>
+      <p>Continent: {{ country.continent }} </p>
     <div>
-      <P><a href="/countries/{{ country.id }} ">More info</a></P>
+      <P><a href="/countries/{{ country.id }}/edit">Edit country</a></P>
+      <p><a href="/countries/{{country.id}}/delete">&#128465;</a></p>
     </div>
     </div>
   </div>

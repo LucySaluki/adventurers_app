@@ -68,15 +68,14 @@ body::after {
 }
 
 .country {
-
   background-color: white;
   border-radius: 5px;
   border-style: outset;
   border-color:darkcyan;
-  padding: 10px;
   font-family: 'Montserrat', sans-serif;
-  margin: 20px 20px;
+  margin: 10px 10px;
   width:35%;
+  padding-left:10px;
   min-width: 200px;
   max-width:500px;
 }
