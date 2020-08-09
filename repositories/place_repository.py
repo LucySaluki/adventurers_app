@@ -20,7 +20,7 @@ def delete_all():
 # select all
 def select_all():
     places = []
-    sql = "SELECT * FROM places"
+    sql = "SELECT places.* FROM places inner join countries on places.country_id = countries.id order by countries.name, places.place_name"
     results = run_sql(sql)
 
     for row in results:

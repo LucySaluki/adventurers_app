@@ -57,7 +57,7 @@ body::after {
   display:flex;
   background-color: white;
   border-radius: 5px;
-  border-style: double;
+  border-style: outset;
   border-color:darkcyan;
   padding: 10px;
   font-family: 'Montserrat', sans-serif;
