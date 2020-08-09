@@ -3,6 +3,9 @@ import pdb
 from models.countries import Country
 import repositories.country_repository as country_repository
 
+from models.place_types import PlaceType
+import repositories.place_type_repository as place_type_repository
+
 from models.places import Place
 import repositories.place_repository as place_repository
 
@@ -20,14 +23,22 @@ country_repository.save(country_3)
 country_4 = Country("Botswana", "Africa")
 country_repository.save(country_4)
 
+#create place types and save to database
+place_type_1 = PlaceType("Archaeological Site")
+place_type_repository.save(place_type_1)
+place_type_2= PlaceType("Nature Reserve")
+place_type_repository.save(place_type_2)
+place_type_3= PlaceType("Marin Reserve")
+place_type_repository.save(place_type_3)
+
 #create places and save to database
-place_1 = Place('Agua Calientes', "Ancient Inca City of Machu Picchu and mountain peak","Archaeological Site",country_2, True )
+place_1 = Place('Agua Calientes', "Ancient Inca City of Machu Picchu and mountain peak",place_type_1,country_2, True )
 place_repository.save(place_1)
-place_2 = Place("Sepilok","Rehabilitation centre and sanctuary for orangutans","Nature Reserve",country_1, True)
+place_2 = Place("Sepilok","Rehabilitation centre and sanctuary for orangutans",place_type_2,country_1, True)
 place_repository. save(place_2)
-place_3 = Place("Kota Kinabalu","Mountain peak and nature reserve.", "Nature Reserve", country_1, True)
+place_3 = Place("Kota Kinabalu","Mountain peak and nature reserve.", place_type_2, country_1, True)
 place_repository.save(place_3)
-place_4 = Place("Puerto Maldanado", "Lake and reserve in the heart of the peruvian Amazon jungle", "Nature Reserve", country_2,True)
+place_4 = Place("Puerto Maldanado", "Lake and reserve in the heart of the peruvian Amazon jungle", place_type_2, country_2,True)
 place_repository.save(place_4)
 
 # test country is saved to database and test return single country
@@ -60,5 +71,12 @@ place_5=Place(place_2.place_name,place_2.description, place_2.place_type, place_
 place_repository.update(place_5)
 test_place_5 = place_repository.select(place_2.id)
 print(test_place_5.visited)
+
+#test updating place_type
+print(place_type_3.type_name)
+place_type_4=PlaceType("Marine Reserve",place_type_3.id)
+place_type_repository.update(place_type_4)
+test_place_type_5=place_type_repository.select(place_type_3.id)
+print(test_place_type_5.type_name)
 
 pdb.set_trace()

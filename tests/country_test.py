@@ -3,7 +3,6 @@ import unittest
 from models.countries import Country
 from models.place_type import PlaceType
 from models.places import Place
-from repositories.country_repository import save
 
 class TestCountry(unittest.TestCase):
     def setUp(self):
