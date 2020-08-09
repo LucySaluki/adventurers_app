@@ -68,7 +68,7 @@ body::after {
 }
 
 .country {
-  
+
   background-color: white;
   border-radius: 5px;
   border-style: outset;
@@ -94,4 +94,35 @@ body::after {
   font-weight: bold;
   text-decoration: none;
 
+}
+
+.back-button a {
+  color: rgb(57, 162, 189);
+  font-weight: bold;
+  text-decoration: none;
+
+}
+
+.back-button {
+  padding:10px;
+  margin-left:20px;
+  border-style: outset;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 5px;
+}
+
+#add-new{
+  padding: 5px;
+  border-radius: 3px;
+}
+
+input[type=submit]  {
+  padding:5px;
+  color: whitesmoke;
+  font-weight:bold;
+  background-color: rgb(57, 162, 189);
+  margin-left:10px;
+  border-style: outset;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 5px;
 }
