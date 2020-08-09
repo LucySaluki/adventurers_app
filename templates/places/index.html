@@ -3,15 +3,15 @@
 
 {% for place in places %}
   <div class="place">
-    <div class="content">
+    <div>
       Country: {{ place.country.name }}
-      <div class="place_name">
+      <div>
         Place: {{place.place_name}}  
       </div>
-      <div class="description">
+      <div>
         {{place.description}}  
       </div>
-      <div class="buttons">
+      <div>
 
         {% if place.visited == True %}
           Been there! <span style='font-size:20px;'>&#10004;</span>

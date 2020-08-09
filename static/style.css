@@ -67,6 +67,20 @@ body::after {
   max-width:500px;
 }
 
+.country {
+  
+  background-color: white;
+  border-radius: 5px;
+  border-style: outset;
+  border-color:darkcyan;
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+  margin: 20px 20px;
+  width:35%;
+  min-width: 200px;
+  max-width:500px;
+}
+
 .add-new {
   padding:10px;
   background-color:rgb(57, 162, 189);
