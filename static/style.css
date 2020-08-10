@@ -51,6 +51,7 @@ body::after {
   padding-left:10px;
   color:rgb(0, 102, 102);
   font-weight: bold;
+  margin-left:10px;
 }
 
 .place {
@@ -63,8 +64,8 @@ body::after {
   font-family: 'Montserrat', sans-serif;
   margin: 20px 20px;
   width:35%;
-  min-width: 400px;
-  max-width:600px;
+  min-width: 200px;
+  max-width:300px;
 }
 
 .country {
@@ -115,7 +116,10 @@ body::after {
   padding: 5px;
   border-radius: 3px;
   border-style: outset;
-  margin:5px;
+  margin:10px;
+  font-family: 'Montserrat', 'sans-serif';
+  color: darkcyan;
+  font-weight:bold;
 }
 
 input[type=submit]  {
@@ -126,8 +130,17 @@ input[type=submit]  {
   border-style: outset;
   font-family: 'Montserrat', sans-serif;
   border-radius: 5px;
+  margin-left: 10px;
 }
-
+h2 {
+  margin-left: 10px;
+}
 p{
   margin-block-end: 5px;
+}
+p a {
+  margin-left:10px;
+}
+label {
+  margin-left:10px;
 }

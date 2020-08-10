@@ -36,17 +36,19 @@ def create_place():
     place_repository.save(new_place)
     return redirect("/places")
 
-#SHOW DETAILS
-@places_blueprint.route("/placess/<id>")
-def show_place(id):
-    place = place_repository.select(id)
-    return render_template('places/show.html', place=place)
+# #SHOW DETAILS
+# @places_blueprint.route("/placess/<id>")
+# def show_place(id):
+#     place = place_repository.select(id)
+#     return render_template('places/show.html', place=place)
 
 # EDIT
 @places_blueprint.route("/places/<id>/edit")
 def edit_place(id):
+    countries =country_repository.select_all()
+    place_types =place_type_repository.select_all()
     place = place_repository.select(id)
-    return render_template('places/edit.html', place=place)
+    return render_template('places/edit.html', place_types=place_types, countries=countries, place=place)
 
 # UPDATE
 @places_blueprint.route("/places/<id>", methods=["POST"])

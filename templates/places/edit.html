@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>View/Edit a Place</h2>
+
+<form action="/places/{{ place.id }}" method="POST">
+    <div>
+        <label for="place_name">Place Name:</label><br>
+        <input type="text" id="add-new" name="place_name" value="{{place.place_name}}">
+    </div>
+    <div>
+      <label for="country">Country:</label><br>
+        <select id="add-new" name="country_id">
+          {% for country in countries %}
+          <option value="{{country.id}}" {% if country.id == place.country.id %} selected {% endif %}>
+            {{ country.name }}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <div>
+      <label for="description">Description:</label><br>
+      <textarea rows="4" cols="50"  id="add-new" name="description">{{place.description}}</textarea>
+  </div>
+  <div>
+    <label for="place_type">Type of Place:</label><br>
+      <select id="add-new" name="place_type_id" value="{{place.place_type_id}}">
+        {% for place_type in place_types %}
+        <option value="{{place_type.id}}" {% if place_type.id == place.place_type.id %} selected {% endif %}>{{ place_type.type_name }}</option>
+        {% endfor %}
+      </select>
+  </div>
+  <div>
+    <label for="visited">Been there?:</label>
+    <select id="add-new" name="visited">
+      <option value="True">Yes</option>
+      <option value="False">No</option>
+    </select>
+</div>
+    <div>
+      <input type="submit">
+    </div>
+</form>
+<p><a href="/places">Return to places menu</a></p>
+{% endblock %}

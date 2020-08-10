@@ -5,11 +5,11 @@
 
 <form action="/countries/{{ country.id }}" method="POST">
     <div>
-        <label for="name">Name:</label>
+        <label for="name">Name:</label><br>
         <input type="text" id="add-new" name="name" value ="{{country.name}}">
     </div>
     <div>
-      <label for="continent">Continent:</label>
+      <label for="continent">Continent:</label><br>
         <select id="add-new" name="continent" value ="{{country.continent}}">
           <option value="Africa" {% if country.continent == "Africa" %} selected="selected" {% endif %}>Africa</option>
           <option value="Antarctica" {% if country.continent == "Antarctica" %} selected="selected" {% endif %}>Antarctica</option>

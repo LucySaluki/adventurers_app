@@ -9,9 +9,6 @@
         Place: {{place.place_name}}  
       </div>
       <div>
-        {{place.description}}  
-      </div>
-      <div>
 
         {% if place.visited == True %}
           Been there! <span style='font-size:20px;'>&#10004;</span>
@@ -19,7 +16,7 @@
           Been there! <span style='font-size:20px;'>&#10008;</span>
         {% endif %}
 
-        <p><a href="/places/{{ place.id }} ">More info</a></p>
+        <p><a href="/places/{{ place.id }}/edit ">Edit or more info</a></p>
         <p><a href="/places/{{place.id}}/delete">&#128465;</a></p>
       </div>
     </div>

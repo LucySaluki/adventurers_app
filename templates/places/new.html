@@ -5,7 +5,7 @@
 
 <form action="/places" method="POST">
   <div>
-    <label for="country_id">Country:</label>
+    <label for="country_id">Country:</label><br>
       <select id="add-new" name="country_id">
         {% for country in countries %}
         <option value={{country.id}}>{{ country.name }}</option>
@@ -13,15 +13,15 @@
       </select>
   </div>
     <div>
-        <label for="place_name">Name:</label>
+        <label for="place_name">Name:</label><br>
         <input type="text" id="add-new" name="place_name">
     </div>
     <div>
-      <label for="description">Description:</label>
-      <input type="text" class ="description" id="add-new" name="description">
+      <label for="description">Description:</label><br>
+      <textarea rows="4" cols="50"  id="add-new" name="description"></textarea>
   </div>
     <div>
-      <label for="place_type">Type of Place:</label>
+      <label for="place_type">Type of Place:</label><br>
         <select id="add-new" name="place_type_id">
           {% for place_type in place_types %}
           <option value={{place_type.id}}>{{ place_type.type_name }}</option>
