@@ -7,6 +7,11 @@
       <p>Country: {{ country.name }}</p>
       <p>Continent: {{ country.continent }} </p>
     <div>
+        {% if country.visited == True %}
+          Been there? <span style='font-size:20px;'>&#10004;</span>
+        {% else %}
+          Been there! <span style='font-size:20px;'>&#10008;</span>  
+        {% endif %}
       <P><a href="/countries/{{ country.id }}/edit">Edit country</a></P>
       <p><a href="/countries/{{country.id}}/delete">&#128465;</a></p>
     </div>

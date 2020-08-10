@@ -43,6 +43,4 @@ def delete(id):
 def update(place_type):
     sql = "UPDATE place_types SET type_name = %s WHERE id = %s"
     values = [place_type.type_name, place_type.id]
-    print(place_type.type_name)
-    print(place_type.id)
     run_sql(sql, values)

@@ -9,10 +9,10 @@ import repositories.place_type_repository as place_type_repository
 # save
 def save(place):
     sql = "INSERT INTO places (place_name, description, place_type_id, country_id, visited, rating) VALUES (%s, %s, %s,%s, %s, %s) RETURNING id"
-    print(place.visited)
     values =[place.place_name, place.description, place.place_type.id, place.country.id, place.visited, place.rating]
     result = run_sql(sql,values)[0]
     place.id = result['id']
+    country_repository.update_visited(place.country.id)
     return place
 
 # delete all

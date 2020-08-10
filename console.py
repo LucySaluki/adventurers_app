@@ -15,13 +15,13 @@ place_type_repository.delete_all()
 country_repository.delete_all()
 
 # create country tables and save to database
-country_1 = Country("Borneo","Asia")
+country_1 = Country("Borneo","Asia",False)
 country_repository.save(country_1)
-country_2 = Country("Peru", "South America")
+country_2 = Country("Peru", "South America",False)
 country_repository.save(country_2)
-country_3 = Country("Ethiopia","Africa")
+country_3 = Country("Ethiopia","Africa",False)
 country_repository.save(country_3)
-country_4 = Country("Botswana", "Africa")
+country_4 = Country("Botswana", "Africa",False)
 country_repository.save(country_4)
 
 #create place types and save to database

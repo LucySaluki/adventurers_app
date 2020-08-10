@@ -2,6 +2,7 @@ from flask import Blueprint, Flask, render_template, request, redirect
 
 from models.countries import Country
 import repositories.country_repository as country_repository
+import repositories.place_repository as place_repository
 
 countries_blueprint = Blueprint("countries", __name__)
 
@@ -22,7 +23,7 @@ def new_country():
 def create_country():
     name = request.form["name"]
     continent=request.form['continent']
-    new_country = Country(name,continent)
+    new_country = Country(name,continent,False)
     country_repository.save(new_country)
     return redirect("/countries")
 

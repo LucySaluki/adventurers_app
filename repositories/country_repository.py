@@ -4,8 +4,8 @@ from models.countries import Country
 
 # save
 def save(country):
-    sql = "INSERT INTO countries(name,continent) VALUES(%s,%s) RETURNING ID"
-    values =[country.name, country.continent]
+    sql = "INSERT INTO countries(name,continent,visited) VALUES(%s,%s, %s) RETURNING ID"
+    values =[country.name, country.continent, country.visited]
     result = run_sql(sql, values)[0]
     country.id = result['id']
     return country
@@ -21,7 +21,7 @@ def select_all():
     sql = "SELECT * FROM countries order by countries.name"
     results = run_sql(sql)
     for result in results:
-        country = Country(result["name"], result ['continent'], result["id"])
+        country = Country(result["name"], result ['continent'], result['visited'], result["id"])
         countries.append(country)
     return countries
 
@@ -30,7 +30,7 @@ def select(id):
     sql = "SELECT * FROM countries WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    country = Country(result["name"], result ['continent'], result["id"])
+    country = Country(result["name"], result ['continent'], result['visited'],result["id"])
     return country
 
 # delete individual
@@ -41,6 +41,12 @@ def delete(id):
 
 # update individual
 def update(country):
-    sql = "UPDATE countries SET (name, continent) = (%s, %s) WHERE id = %s"
-    values = [country.name, country.continent, country.id]
+    sql = "UPDATE countries SET (name, continent,visited) = (%s, %s) WHERE id = %s"
+    values = [country.name, country.continent, country.visited, country.id]
+    run_sql(sql, values)
+
+#update country to reflect new place visited
+def update_visited(id):
+    sql = "UPDATE countries SET visited = True WHERE id = %s"
+    values = [id]
     run_sql(sql, values)
