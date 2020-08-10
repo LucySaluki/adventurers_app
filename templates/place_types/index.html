@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for place_type in place_types %}
+  <div class="place">
+    <div>
+      <p>Type of Place: {{ place_type.type_name }}</p>
+    <div>
+      <P><a href="/place_types/{{ place_type.id }}/edit">Edit type of place</a></P>
+      <p><a href="/place_types/{{place_type.id}}/delete">&#128465;</a></p>
+    </div>
+    </div>
+  </div>
+{% endfor %}
+
+<button class = "add-new"><a href="/place_types/new">Add new type of place</a></button>
+
+
+{% endblock %}

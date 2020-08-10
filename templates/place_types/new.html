@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add a New Type of Place</h2>
+
+<form action="/place_types" method="POST">
+    <div>
+        <label for="type_name">Type of Place:</label>
+        <input type="text" id="add-new" name="type_name">
+    </div>
+    <div>
+      <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Edit a Type of Place</h2>
+
+<form action="/place_types/{{ place_type.id }}" method="POST">
+    <div>
+        <label for="type_name">Type of Place:</label><br>
+        <input type="text" id="add-new" name="type_name" value ="{{place_type.type_name}}">
+    </div>
+    <div>
+      <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

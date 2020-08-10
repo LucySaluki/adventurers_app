@@ -19,6 +19,5 @@ CREATE TABLE places (
     place_name VARCHAR (255),
     description VARCHAR(255),
     place_type_id INT REFERENCES place_types(id),
-    visited BOOLEAN,
     country_id INT REFERENCES countries(id)
 )
