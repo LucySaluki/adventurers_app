@@ -36,14 +36,13 @@ body::after {
   text-decoration: none;
 }
 
-.nav-menu li a:visited{
+.main-list:visited{
   color: white;
 }
 
 .nav-menu li{
   padding-right: 10px;
   list-style: none;
-  color: white;
   font-size: 20px;
 }
 
@@ -64,8 +63,8 @@ body::after {
   font-family: 'Montserrat', sans-serif;
   margin: 20px 20px;
   width:35%;
-  min-width: 200px;
-  max-width:300px;
+  min-width: 300px;
+  max-width:400px;
 }
 
 .country {
@@ -75,10 +74,10 @@ body::after {
   border-color:darkcyan;
   font-family: 'Montserrat', sans-serif;
   margin: 10px 10px;
-  width:35%;
+  width:25%;
   padding-left:10px;
-  min-width: 200px;
-  max-width:500px;
+  min-width: 100px;
+  max-width:250px;
 }
 
 .add-new {
@@ -144,3 +143,45 @@ p a {
 label {
   margin-left:10px;
 }
+
+/* Dropdown Button */
+.dropbtn {
+  padding-right: 10px;
+  color: whitesmoke;
+  font-size: 20px;
+  border: none;
+  font-family: fantasy;
+  background-color: rgb(57, 162, 189);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:whitesmoke;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  padding: 12px 16px;
+  color:rgb(3, 65, 65);
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color:rgb(57, 162, 189);}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: rgb(57, 162, 189)}

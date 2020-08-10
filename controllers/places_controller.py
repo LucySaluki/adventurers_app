@@ -36,11 +36,11 @@ def create_place():
     place_repository.save(new_place)
     return redirect("/places")
 
-# #SHOW DETAILS
-# @places_blueprint.route("/placess/<id>")
-# def show_place(id):
-#     place = place_repository.select(id)
-#     return render_template('places/show.html', place=place)
+#SHOW DETAILS FILTERED
+@places_blueprint.route("/places/<visited>/show")
+def show_place_filtered(visited):
+    places = place_repository.select_filtered(visited)
+    return render_template('places/show.html', places=places)
 
 # EDIT
 @places_blueprint.route("/places/<id>/edit")

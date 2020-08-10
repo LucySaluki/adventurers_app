@@ -57,3 +57,17 @@ def update(place):
     sql = "UPDATE places SET (place_name, description, place_type_id, country_id, visited) = (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [place.place_name, place.description, place.place_type.id, place.country.id, place.visited, place.id]
     run_sql(sql, values)
+
+# select individual filtered
+def select_filtered(visited):
+    places = []
+    sql = "SELECT * FROM places where visited = %s"
+    values = [visited]
+    results = run_sql(sql,values)
+
+    for row in results:
+        country = country_repository.select(row['country_id'])
+        place_type = place_type_repository.select(row['place_type_id'])
+        place=Place(row['place_name'],row['description'],place_type ,country, row['visited'],row['id'])
+        places.append(place)
+    return places
