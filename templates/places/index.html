@@ -9,13 +9,16 @@
         Place: {{place.place_name}}  
       </div>
       <div>
-
         {% if place.visited == True %}
           Been there! <span style='font-size:20px;'>&#10004;</span>
         {% else %}
           Been there! <span style='font-size:20px;'>&#10008;</span>
         {% endif %}
-
+        <div>
+        {% for n in range(place.rating) %}
+          <span style='font-size:10px;'>&#11088;</span>
+        {% endfor %} 
+        </div> 
         <p><a href="/places/{{ place.id }}/edit ">Edit or more info</a></p>
         <p><a href="/places/{{place.id}}/delete">&#128465;</a></p>
       </div>

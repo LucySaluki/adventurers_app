@@ -32,7 +32,8 @@ def create_place():
     country_id = request.form['country_id']
     country = country_repository.select(country_id)
     visited = request.form['visited']
-    new_place = Place(place_name,description, place_type, country, visited)
+    rating=request.form['rating']
+    new_place = Place(place_name,description, place_type, country, visited,rating)
     place_repository.save(new_place)
     return redirect("/places")
 
@@ -60,7 +61,8 @@ def update_place(id):
     country_id = request.form["country_id"]
     country = country_repository.select(country_id)
     visited = request.form["visited"]
-    new_place = Place(place_name,description, place_type, country, visited)
+    rating = request.form["rating"]
+    new_place = Place(place_name,description, place_type, country, visited,rating)
     place_repository.update(new_place)
     return redirect("/places")
 

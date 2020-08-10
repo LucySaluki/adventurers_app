@@ -8,9 +8,9 @@ import repositories.place_type_repository as place_type_repository
 
 # save
 def save(place):
-    sql = "INSERT INTO places (place_name, description, place_type_id, country_id, visited) VALUES (%s, %s, %s,%s, %s) RETURNING id"
+    sql = "INSERT INTO places (place_name, description, place_type_id, country_id, visited, rating) VALUES (%s, %s, %s,%s, %s, %s) RETURNING id"
     print(place.visited)
-    values =[place.place_name, place.description, place.place_type.id, place.country.id, place.visited]
+    values =[place.place_name, place.description, place.place_type.id, place.country.id, place.visited, place.rating]
     result = run_sql(sql,values)[0]
     place.id = result['id']
     return place
@@ -29,7 +29,7 @@ def select_all():
     for row in results:
         country = country_repository.select(row["country_id"])
         place_type = place_type_repository.select(row["place_type_id"])
-        place=Place(row['place_name'],row['description'],place_type,country,row['visited'],row['id'])
+        place=Place(row['place_name'],row['description'],place_type,country,row['visited'],row['rating'], row['id'])
         places.append(place)
     return places
 
@@ -43,7 +43,7 @@ def select(id):
     if result is not None:
         country = country_repository.select(result['country_id'])
         place_type = place_type_repository.select(result['place_type_id'])
-        place=Place(result['place_name'],result['description'],place_type,country,result['visited'],result['id'])
+        place=Place(result['place_name'],result['description'],place_type,country,result['visited'],result['rating'], result['id'])
     return place
 
 # delete individual
@@ -54,8 +54,8 @@ def delete(id):
 
 # update individual
 def update(place):
-    sql = "UPDATE places SET (place_name, description, place_type_id, country_id, visited) = (%s, %s, %s, %s, %s) WHERE id = %s"
-    values = [place.place_name, place.description, place.place_type.id, place.country.id, place.visited, place.id]
+    sql = "UPDATE places SET (place_name, description, place_type_id, country_id, visited, rating) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [place.place_name, place.description, place.place_type.id, place.country.id, place.visited, place.rating, place.id]
     run_sql(sql, values)
 
 # select individual filtered
@@ -68,6 +68,6 @@ def select_filtered(visited):
     for row in results:
         country = country_repository.select(row['country_id'])
         place_type = place_type_repository.select(row['place_type_id'])
-        place=Place(row['place_name'],row['description'],place_type ,country, row['visited'],row['id'])
+        place=Place(row['place_name'],row['description'],place_type ,country, row['visited'],row['rating'], row['id'])
         places.append(place)
     return places

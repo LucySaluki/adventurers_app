@@ -13,6 +13,9 @@
         Country: {{place.country.name}} <br> 
         Description: {{place.description}} <br>
         Type of Place: {{ place.place_type.type_name }}<br>
+      {% for n in range(place.rating) %}
+        <span style='font-size:10px;'>&#11088;</span>
+      {% endfor %}
     </div>
 {% endfor %}
 <p><a href="/places">Return to places menu</a></p>
