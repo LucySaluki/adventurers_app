@@ -59,11 +59,25 @@ def update(place):
     print(place.id)
     run_sql(sql, values)
 
-# select individual filtered
+# select filtered
 def select_filtered(visited):
     places = []
     sql = "SELECT * FROM places where visited = %s"
     values = [visited]
+    results = run_sql(sql,values)
+
+    for row in results:
+        country = country_repository.select(row['country_id'])
+        place_type = place_type_repository.select(row['place_type_id'])
+        place=Place(row['place_name'],row['description'],place_type ,country, row['visited'],row['rating'], row['id'])
+        places.append(place)
+    return places
+
+# select search
+def select_search(continent):
+    places = []
+    sql = "SELECT places.* FROM places INNER JOIN countries ON places.country_id = countries.id WHERE countries.continent = %s"
+    values = [continent]
     results = run_sql(sql,values)
 
     for row in results:

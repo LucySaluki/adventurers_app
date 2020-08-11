@@ -73,7 +73,7 @@ def delete_place(id):
     return redirect("/places")
 
 #SHOW DETAILS FROM SEARCH
-@places_blueprint.route("/places/<visited>/show")
-def show_place_filtered(visited):
-    places = place_repository.select_filtered(visited)
-    return render_template('places/show.html', places=places)
+@places_blueprint.route("/places/<continent>/search")
+def show_place_search(continent):
+    places = place_repository.select_search(continent)
+    return render_template('places/search.html', places=places, continent=continent)
