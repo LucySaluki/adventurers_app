@@ -21,5 +21,5 @@ CREATE TABLE places (
     place_type_id INT REFERENCES place_types(id),
     visited BOOLEAN,
     rating INT,
-    country_id INT REFERENCES countries(id)
+    country_id INT REFERENCES countries(id) ON DELETE CASCADE
 )

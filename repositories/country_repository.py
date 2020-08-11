@@ -65,9 +65,9 @@ def update(country):
 
 #update country to reflect new place visited
 # initiated whenever a place is added or edited
-# create the sql to update visited to True using id 
+# create the sql to update visited to true if any of the associated places have been visited field using id 
 # run sql
 def update_visited(id):
-    sql = "UPDATE countries SET visited = True WHERE id = %s"
+    sql = "update countries set visited = a.visited from (select places.country_id, case when sum(visited_true) = 0 then False else True end as visited from (select country_id, case when visited = True then 1 else 0 end as visited_true from places) as places group by country_id) as a where a.country_id=countries.id and countries.id = %s"
     values = [id]
     run_sql(sql, values)
