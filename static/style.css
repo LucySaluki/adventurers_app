@@ -27,7 +27,7 @@ body::after {
 
 .nav-menu{
   display: flex;
-  padding: 20px;
+  padding-top:20px;
   background-color: rgb(57, 162, 189);
   color: white;
 }
@@ -41,11 +41,16 @@ body::after {
 }
 
 .nav-menu li{
-  padding-right: 10px;
+  padding-right: 15px;
+  padding-top:10px;
   list-style: none;
   font-size: 20px;
+  
 }
-
+.nav-label{
+  margin:0px;
+  font-size: 20px;
+}
 .container {
   padding-left:10px;
   color:rgb(0, 102, 102);
@@ -87,12 +92,12 @@ body::after {
   font-family: 'Montserrat', sans-serif;
   border-radius: 5px;
 }
-.search-box {
-  display:flex;
-  justify-content: flex-end;
-  font-family: 'Montserrat', sans-serif;
-  border-radius: 5px;
+
+.search {
+  border-style: none;
+  background-color: rgb(57, 162, 189);
 }
+
 .add-new a {
   color: whitesmoke;
   font-weight: bold;
@@ -126,7 +131,7 @@ body::after {
   font-weight:bold;
 }
 
-input[type=submit]  {
+.main-input {
   padding:5px;
   color: whitesmoke;
   font-weight:bold;

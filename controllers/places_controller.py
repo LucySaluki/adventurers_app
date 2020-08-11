@@ -43,6 +43,18 @@ def show_place_filtered(visited):
     places = place_repository.select_filtered(visited)
     return render_template('places/show.html', places=places)
 
+# SEARCH CRITERIA
+@places_blueprint.route("/places/criteria", methods=['POST'])
+def search_criteria():
+    continent=request.form['continent']
+    return redirect(f"/places/{continent}")
+
+#SHOW DETAILS FROM SEARCH
+@places_blueprint.route("/places/<continent>")
+def show_place_search(continent):
+    places = place_repository.select_search(continent)
+    return render_template('places/search.html', places=places, continent=continent)
+
 # EDIT
 @places_blueprint.route("/places/<id>/edit")
 def edit_place(id):
