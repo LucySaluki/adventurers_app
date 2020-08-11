@@ -9,12 +9,15 @@ places_blueprint = Blueprint("places", __name__)
 countries_blueprint =Blueprint("countries", __name__)
 
 # INDEX
+# create a place object and fill with all places using the repository
+# open the main places page using that object to populate the fields
 @places_blueprint.route("/places")
 def places():
     places = place_repository.select_all()
     return render_template("places/index.html", places = places)
 
 # NEW
+# open a new blank places page
 @places_blueprint.route("/places/new")
 def new_place():
     countries =country_repository.select_all()
@@ -23,6 +26,9 @@ def new_place():
 
 
 # CREATE
+# from the new placess input get each of the field values
+# create a new place object
+# return to the places page to show the new entry
 @places_blueprint.route("/places", methods=["POST"])
 def create_place():
     place_name = request.form['place_name']
@@ -38,24 +44,32 @@ def create_place():
     return redirect("/places")
 
 #SHOW DETAILS FILTERED
+# select all the places based on the visited criteria true of false from the page address
+# go to the places show page based and display the places objects
 @places_blueprint.route("/places/<visited>/show")
 def show_place_filtered(visited):
     places = place_repository.select_filtered(visited)
     return render_template('places/show.html', places=places)
 
 # SEARCH CRITERIA
+# get the continent value from the dropdown
+# go to the continent page
 @places_blueprint.route("/places/criteria", methods=['POST'])
 def search_criteria():
     continent=request.form['continent']
     return redirect(f"/places/{continent}")
 
 #SHOW DETAILS FROM SEARCH
+# using the continent value from the page select all the countries on that continient
+# go to the output search page using the list of places created and the continent name
 @places_blueprint.route("/places/<continent>")
 def show_place_search(continent):
     places = place_repository.select_search(continent)
     return render_template('places/search.html', places=places, continent=continent)
 
 # EDIT
+# use the id to select a specific place
+# return that entry in editing mode and pre-populated
 @places_blueprint.route("/places/<id>/edit")
 def edit_place(id):
     countries =country_repository.select_all()
@@ -64,6 +78,10 @@ def edit_place(id):
     return render_template('places/edit.html', place_types=place_types, countries=countries, place=place)
 
 # UPDATE
+# from the place edit input get each of the field values
+# create a new place, setting the id to the exisiting id
+# use that new place to update the existing item via the id
+# return to the places page to show the edited entry
 @places_blueprint.route("/places/<id>", methods=["POST"])
 def update_place(id):
     place_name = request.form["place_name"]
@@ -79,6 +97,9 @@ def update_place(id):
     return redirect("/places")
 
 # DELETE
+# select a specific place by id 
+# use the repository delete to remove the entry 
+# return to main places page
 @places_blueprint.route("/places/<id>/delete")
 def delete_place(id):
     place_repository.delete(id)

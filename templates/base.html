@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='dropdown.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='buttons.css') }}">
   <title>Adventurers Travel List</title>
 </head>
 <body>
@@ -23,7 +25,7 @@
                             <a href="/place_types">Place types</a>
                     </li>
                     <form action="/places/criteria" method="POST">
-                          <label class="nav-label" for="continent">Search</label>
+                          <label class="nav-label" for="continent">Search:</label>
                             <select id="add-new" name="continent">
                               <option value="Africa">Africa</option>
                               <option value="Antarctica">Antarctica</option>

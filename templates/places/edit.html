@@ -32,8 +32,8 @@
   <div>
     <label for="visited">Been there?:</label>
     <select id="add-new" name="visited">
-      <option value="True">Yes</option>
-      <option value="False">No</option>
+      <option value="True" {% if place.visited == True %} selected {% endif %}>Yes</option>
+      <option value="False" {% if place.visited == False %} selected {% endif %}>No</option>
     </select>
   </div>
   <div>
