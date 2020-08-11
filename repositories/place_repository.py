@@ -56,6 +56,7 @@ def delete(id):
 def update(place):
     sql = "UPDATE places SET (place_name, description, place_type_id, country_id, visited, rating) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [place.place_name, place.description, place.place_type.id, place.country.id, place.visited, place.rating, place.id]
+    print(place.id)
     run_sql(sql, values)
 
 # select individual filtered

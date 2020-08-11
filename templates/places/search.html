@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if places[0].visited == True %} 
+<h2>Places Visited</h2> 
+{% else %} 
+<h2>Places Want to Visit</h2> 
+{% endif %}
+
+{% for place in places %}
+    <div class = "place">
+        Place Name: {{place.place_name}} <br>
+        Country: {{place.country.name}} <br> 
+        Description: {{place.description}} <br>
+        Type of Place: {{ place.place_type.type_name }}<br>
+      {% for n in range(place.rating) %}
+        <span style='font-size:10px;'>&#11088;</span>
+      {% endfor %}
+    </div>
+{% endfor %}
+<p><a href="/places">Return to places menu</a></p>
+{% endblock %}

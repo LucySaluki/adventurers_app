@@ -62,7 +62,7 @@ def update_place(id):
     country = country_repository.select(country_id)
     visited = request.form["visited"]
     rating = request.form["rating"]
-    new_place = Place(place_name,description, place_type, country, visited,rating)
+    new_place = Place(place_name,description, place_type, country, visited,rating,id)
     place_repository.update(new_place)
     return redirect("/places")
 
@@ -71,3 +71,9 @@ def update_place(id):
 def delete_place(id):
     place_repository.delete(id)
     return redirect("/places")
+
+#SHOW DETAILS FROM SEARCH
+@places_blueprint.route("/places/<visited>/show")
+def show_place_filtered(visited):
+    places = place_repository.select_filtered(visited)
+    return render_template('places/show.html', places=places)
