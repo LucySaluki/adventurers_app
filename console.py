@@ -54,14 +54,14 @@ print(country_test.name)
 
 # test updating country
 print(country_3.name)
-country_5=Country("Madagascar",country_3.continent,country_3.id) 
+country_5=Country("Madagascar",country_3.continent,country_3.visited, country_3.id) 
 country_repository.update(country_5)
 test_country_4=country_repository.select(country_3.id)
 print(test_country_4.name)
 
 # and turning it back
 print(country_3.name)
-country_5=Country("Ethiopia",country_3.continent, country_3.id) 
+country_5=Country("Ethiopia",country_3.continent, country_3.visited, country_3.id) 
 country_repository.update(country_5)
 test_country_4=country_repository.select(country_3.id)
 print(test_country_4.name)
