@@ -1,18 +1,18 @@
 # Adventurers Travel List
-adventures_app - travel bucket list app to record where been and where want to go for world traveller
-
-Functionality includes a country page where countries can be added
-
-A places page where places within countries can be added
-
-Updating and creating new countries
-
-Automatic update on countries visited if a place is associated with a country
-
-Updating adding and viewing of places
-
-Viewing by places visited want to visit
-
-Search by countries within a continent (part of the countries table)
-
-Rating stars for places visited
+A place to create and store places and countries you have visited and wish to visit with ratings and searchable by continent and those already visited and a yet to visit wish list.
+## Some of the Features of the app
+* Countries page and Places page where you can add edit and delete either a country or a place.
+* Creating, editing and deleting your own place types.
+* A country can have many place (you should add your country first).
+* Automatic updating on countries as visited if a place is added that is associated with a country and has been visited.
+* Star ratings for places.
+* Viewing by places visited and want to visit.
+* Search by continent for all places on that continent.
+## You will needed:
+* Postgres on your computer with a database called "adventure".
+* Some kind of text editor like visual studio to run the scripts.
+## To set up
+* Download the code
+* Run createdb adventure (if you havent made an empty database with that name already).
+* Run psql -d adventure -f db/adventures.sql from the app location.
+* Optional - you can run python3 console.py to start with a basic set up.
