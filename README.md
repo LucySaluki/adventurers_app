@@ -11,8 +11,11 @@ A place to create and store places and countries you have visited and wish to vi
 ## You will needed:
 * Postgres on your computer with a database called "adventure".
 * Some kind of text editor like visual studio to run the scripts.
+* Flask on your computer.
 ## To set up
 * Download the code
 * Run createdb adventure (if you havent made an empty database with that name already).
 * Run psql -d adventure -f db/adventures.sql from the app location.
+* Run Flask using the Flask run command.
+* Open Chrome and enter localhost:5000 into the address bar.
 * Optional - you can run python3 console.py to start with a basic set up.
